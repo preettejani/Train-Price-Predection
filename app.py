@@ -3,13 +3,8 @@ import pandas as pd
 import pickle as pk
 
 st.title("Flight Price Prediction App")
+model = pk.load(open('model.pkl', 'rb'))
 
-try:
-    with open('model.pkl', 'rb') as f:
-        model = pk.load(f)
-except Exception as e:
-    print(f"Error loading model.pkl: {e}")
-    raise e
 
 st.write(" Model Loaded Successfully!")
 
